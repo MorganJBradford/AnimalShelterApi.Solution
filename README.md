@@ -95,11 +95,11 @@ Base URL: `https://localhost:5000`
 #### HTTP Request Structure
 
 ```
-GET /api/{component}
-POST /api/{component}
-GET /api/{component}/{id}
-PUT /api/{component}/{id}
-DELETE /api/{component}/{id}
+GET /api/animals
+POST /api/animals
+GET /api/animals/{id}
+PUT /api/animals/{id}
+DELETE /api/animals/{id}
 ```
 
 ##### Example Query
@@ -107,7 +107,7 @@ DELETE /api/{component}/{id}
 http://localhost:5000/api/Animals/5
 ```
 
-#### Example Response
+#### Example JSON Response
 
 ```
 {
@@ -118,6 +118,29 @@ http://localhost:5000/api/Animals/5
     "gender": "F"
 }
 ```
+
+### Animals
+
+Access information on a fake animal shelters unfortunately fake animals.
+
+#### HTTP Request
+
+```
+GET /api/{component}
+POST /api/{component}
+GET /api/{component}/{id}
+PUT /api/{component}/{id}
+DELETE /api/{component}/{id}
+```
+
+#### Path Parameters
+
+| Parameter | Type | Default | Required | Description |
+| :---: | :---: | :---: | :---: | --- |
+| name | string | none | POST/PUT | Return matches by name.
+| species | string | none | POST/PUT | Return animals by species (cat/dog acceptable). |
+| gender | string | none | false | Return animals by gender |
+| age | int | 0 | false | Return animals by age |
 
 
 

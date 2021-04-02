@@ -33,7 +33,8 @@ ___
 
 * Navigate to your appsettings.json. The code should appear like the following:
 
-``{
+```
+{
   "Logging": {
     "LogLevel": {
       "Default": "Warning",
@@ -45,11 +46,13 @@ ___
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost;Port=3306;database=[your_database_name]=root;pwd=[your_database_password];"
   }
-}``
+}
+```
 
 If you are using a server other than the default server, you will need to change the Port number. Otherwise, we will update the code to put in our database information and password. Replace "\[database_name]" with the "animal_shelter_api" and "\[password]" with your password. **Again this is private and should be included in a .gitignore.** The final result should be similar to the following:
 
-``{
+```
+{
   "Logging": {
     "LogLevel": {
       "Default": "Warning",
@@ -61,7 +64,8 @@ If you are using a server other than the default server, you will need to change
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost;Port=3306;database=animal_shelter_api=root;pwd=password;"
   }
-}``
+}
+```
 
 2. Launch the API
 

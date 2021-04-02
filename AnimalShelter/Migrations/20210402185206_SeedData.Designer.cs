@@ -2,14 +2,16 @@
 using AnimalShelter.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AnimalShelter.Migrations
 {
     [DbContext(typeof(AnimalShelterContext))]
-    partial class AnimalShelterContextModelSnapshot : ModelSnapshot
+    [Migration("20210402185206_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,7 +48,7 @@ namespace AnimalShelter.Migrations
                         {
                             AnimalId = 1,
                             Age = 7,
-                            Gender = "F",
+                            Gender = "Female",
                             Name = "Gizmo",
                             Species = "Cat"
                         },
@@ -54,23 +56,23 @@ namespace AnimalShelter.Migrations
                         {
                             AnimalId = 2,
                             Age = 7,
-                            Gender = "M",
+                            Gender = "Male",
                             Name = "Gerry",
-                            Species = "Dog"
+                            Species = "Doge"
                         },
                         new
                         {
                             AnimalId = 3,
                             Age = 7,
-                            Gender = "M",
+                            Gender = "Jerry",
                             Name = "Geraldo",
-                            Species = "Dog"
+                            Species = "Doge"
                         },
                         new
                         {
                             AnimalId = 4,
                             Age = 7,
-                            Gender = "F",
+                            Gender = "Terry",
                             Name = "Guillermo",
                             Species = "Cat"
                         },
@@ -78,7 +80,7 @@ namespace AnimalShelter.Migrations
                         {
                             AnimalId = 5,
                             Age = 7,
-                            Gender = "F",
+                            Gender = "Berry",
                             Name = "Gizmo",
                             Species = "Cat"
                         });

@@ -107,6 +107,17 @@ DELETE /api/{component}/{id}
 http://localhost:5000/api/Animals/5
 ```
 
+#### Example Response
+
+```
+{
+    "animalId": 5,
+    "name": "Gizmo",
+    "species": "Cat",
+    "age": 7,
+    "gender": "F"
+}
+```
 
 
 

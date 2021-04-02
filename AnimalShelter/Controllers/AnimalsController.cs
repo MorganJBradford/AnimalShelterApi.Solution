@@ -47,7 +47,7 @@ namespace AnimalShelter.Controllers
       return await query.ToListAsync();
     }
 
-    // api/Animals/2
+    // GET: api/Animals/2
     [HttpGet("{id}")]
     public async Task<ActionResult<Animal>> GetAnimal(int id)
     {
@@ -61,6 +61,35 @@ namespace AnimalShelter.Controllers
       return animal;
     }
 
+    // PUT: api/animals/2
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Put(int id, Animal animal)
+    {
+      if (id != animal.AnimalId)
+      {
+        return BadRequest();
+      }
+
+      _db.Entry(animal).State = EntityState.Modified;
+
+      try
+      {
+        await _db.SaveChangesAsync();
+      }
+      catch (DbUpdateConcurrencyException)
+      {
+        if (!AnimalExists(id))
+        {
+          return NotFound();
+        }
+        else
+        {
+          throw;
+        }
+      }
+      return NoContent();
+    }
+
     //Post: api/Animals
     [HttpPost]
     public async Task<ActionResult<Animal>> Post(Animal animal)
@@ -71,6 +100,7 @@ namespace AnimalShelter.Controllers
       return CreatedAtAction(nameof(GetAnimal), new { id = animal.AnimalId }, animal);
     }
 
+    // DELETE: api/Animals/2
     [HttpDelete("id")]
     public async Task<IActionResult> DeleteAnimal(int id)
     {

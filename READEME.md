@@ -63,9 +63,9 @@ If you are using a server other than the default server, you will need to change
   }
 }``
 
-2. Run Application
+2. Launch the API
 
-* From the top level directory enter 'cd AnimalShelterApi' in the command line.
+* From the top level directory enter 'cd AnimalShelter' in the command line.
 * Run 'dotnet ef database update' to create your database.
 * Run the command 'dotnet restore' to download dependencies required to run the project.
 * Next, enter 'dotnet run' the in command line. You should see a message similar to the following populate in your terminal:
@@ -76,7 +76,7 @@ If you are using a server other than the default server, you will need to change
 > Now listening on: https://localhost:5001
 > Application started. Press Ctrl+C to shut down.
 
-* Lastly, follow the link "http://localhost:5000" either via holding the 'ctrl' and clicking the link (PC), or by holding 'cmd' and clicking the link (Mac).
+
 
 
 ## 🛠️ *Technologies used:*

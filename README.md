@@ -6,6 +6,8 @@
 
 <img alt="C#" src="https://img.shields.io/badge/c%23%20-%23239120.svg?&style=for-the-badge&logo=c-sharp&logoColor=white"/>
 <img alt="made with Bash" src="https://img.shields.io/badge/Made%20with-Bash-1f425f.svg"/>
+<img alt="made with Bash" src="https://forthebadge.com/images/badges/made-with-markdown.svg"/>
+
 </p>
 
 ___

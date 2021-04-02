@@ -84,9 +84,9 @@ If you are using a server other than the default server, you will need to change
 
 API endpoints can be explored via [Postman](https://www.postman.com/downloads/) or in the browser.
 
-### Swagger(Swashbuckle)
+### Swagger (Swashbuckle)
 
-For endpoint exploration in browser, visit 'http://localhost:5000/swagger' after launching the API.
+For endpoint exploration in browser with swagger, visit 'http://localhost:5000/swagger' after launching the API.
 
 ### Endpoints
 

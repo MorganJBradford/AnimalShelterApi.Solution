@@ -11,6 +11,7 @@ namespace AnimalShelter.Models
     public Species Species { get; set; }
     public int Age { get; set; }
     [Required]
+    // [RegularExpression("['Female'|'female'|'Male'|'male']")]
     public Gender Gender { get; set; }
   }
 

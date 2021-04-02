@@ -27,12 +27,12 @@ namespace AnimalShelter
       services.AddControllers();
       services.AddSwaggerGen(c =>
       {
-        c.SwaggerDoc("V1", new OpenApiInfo
+        c.SwaggerDoc("v1", new OpenApiInfo
         {
           Version = "v1",
           Title = "AnimalShelter API",
           Description = "An api to access animals at this fictitious animal shelter",
-          TermsOfService = new Uri("Use it how you like"),
+          TermsOfService = new Uri("https://opensource.org/licenses/MIT"),
           Contact = new OpenApiContact
           {
             Name = "Morgan Bradford",
@@ -55,7 +55,7 @@ namespace AnimalShelter
 
       app.UseSwaggerUI(c =>
       {
-        c.SwaggerEndpoint("/swagger/V1/swagger.json", "My API V1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
       });
       if (env.IsDevelopment())
       {

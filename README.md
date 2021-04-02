@@ -81,19 +81,15 @@ If you are using a server other than the default server, you will need to change
 > Application started. Press Ctrl+C to shut down.
 
 ## 📡 API Documentation
-
 API endpoints can be explored via [Postman](https://www.postman.com/downloads/) or in the browser.
 
 ### Swagger (Swashbuckle)
-
 For endpoint exploration in browser with swagger, visit 'http://localhost:5000/swagger' after launching the API.
 
 ### Endpoints
-
 Base URL: `https://localhost:5000`
 
 #### HTTP Request Structure
-
 ```
 GET /api/animals
 POST /api/animals
@@ -108,23 +104,20 @@ http://localhost:5000/api/Animals/5
 ```
 
 #### Example JSON Response
-
 ```
 {
-    "animalId": 5,
-    "name": "Gizmo",
-    "species": "Cat",
-    "age": 7,
-    "gender": "F"
+  "animalId": 5,
+  "name": "Gizmo",
+  "species": "Cat",
+  "age": 7,
+  "gender": "F"
 }
 ```
 
 ### Animals
-
 Access information on a fake animal shelters unfortunately fake animals.
 
 #### HTTP Request
-
 ```
 GET /api/{component}
 POST /api/{component}
@@ -134,15 +127,17 @@ DELETE /api/{component}/{id}
 ```
 
 #### Path Parameters
-
 | Parameter | Type | Default | Required | Description |
 | :---: | :---: | :---: | :---: | --- |
 | name | string | none | POST/PUT | Return matches by name.
-| species | string | none | POST/PUT | Return animals by species (cat/dog acceptable). |
+| species | string | none | POST/PUT | Return animals by species. |
 | gender | string | none | false | Return animals by gender |
 | age | int | 0 | false | Return animals by age |
 
-
+#### Example Query
+'''
+http://localhost:5000/api/animals?species=dog
+'''
 
 ## 🛠️ *Technologies used:*
 * ASP.NET Core MVC

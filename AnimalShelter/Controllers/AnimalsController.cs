@@ -85,5 +85,10 @@ namespace AnimalShelter.Controllers
 
       return NoContent();
     }
+
+    private bool AnimalExists(int id)
+    {
+      return _db.Animals.Any(e => e.AnimalId == id);
+    }
   }
 }

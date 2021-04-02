@@ -1,0 +1,13 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning",
+      "System": "Information",
+      "Microsoft": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=[your_database_name]=root;pwd=[your_database_password];"
+  }
+}

@@ -48,7 +48,7 @@ ___
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=[your_database_name]=root;pwd=[your_database_password];"
+    "DefaultConnection": "Server=localhost;Port=3306;database=[your_database_name];uid=root;pwd=[your_database_password];"
   }
 }
 ```
@@ -66,7 +66,7 @@ If you are using a server other than the default server, you will need to change
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=animal_shelter_api=root;pwd=password;"
+    "DefaultConnection": "Server=localhost;Port=3306;database=animal_shelter_api;uid=root;pwd=password;"
   }
 }
 ```

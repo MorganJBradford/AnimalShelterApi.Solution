@@ -5,6 +5,8 @@ namespace AnimalShelter.Models.DTOs.Requests
   public class UserRegistrationDto
   {
     [Required]
+    public string UserName { get; set; }
+    [Required]
     [EmailAddress]
     public string Email { get; set; }
     [Required]

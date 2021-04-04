@@ -4,9 +4,14 @@ using AnimalShelter.Models.DTOs.Responses;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace AnimalShelter.Controllers
 {
@@ -70,6 +75,30 @@ namespace AnimalShelter.Controllers
       });
     }
 
+    private string GenerateJwtToken(IdentityUser user)
+    {
+      var jwtTokenHandler = new JwtSecurityTokenHandler();
 
+      var key = Encoding.ASCII.GetBytes(_jwtConfig.Secret);
+
+      var tokenDescriptor = new SecurityTokenDescriptor
+      {
+        Subject = new ClaimsIdentity(new []
+        {
+          new Claim("Id", user.Id),
+          new Claim(JwtRegisteredClaimNames.Email, user.Email),
+          new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+          new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+        }),
+        Expires = DateTime.UtcNow.AddHours(24),
+        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+      };
+
+      var token = jwtTokenHandler.CreateToken(tokenDescriptor);
+      var jwtToken = jwtTokenHandler.WriteToken(token);
+
+      return jwtToken;
+
+    }
   }
 }

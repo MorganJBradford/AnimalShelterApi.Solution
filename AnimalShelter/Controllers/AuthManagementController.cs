@@ -53,7 +53,13 @@ namespace AnimalShelter.Controllers
 
         if(isCreated.Succeeded)
         {
+          var jwtToken = GenerateJwtToken(newUser);
 
+          return Ok(new RegistrationResponse() {
+            Success = true,
+            Token = jwtToken
+
+          });
         }
         else
         {

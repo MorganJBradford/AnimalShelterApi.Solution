@@ -48,7 +48,7 @@ namespace AnimalShelter.Controllers
           });
         }
 
-        var newUser = new IdentityUser() { Email = user.Email, UserName = user.Email };
+        var newUser = new IdentityUser() { Email = user.Email, UserName = user.UserName };
         var isCreated = await _userManager.CreateAsync(newUser, user.Password);
 
         if(isCreated.Succeeded)

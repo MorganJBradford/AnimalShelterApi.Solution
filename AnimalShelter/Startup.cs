@@ -41,7 +41,7 @@ namespace AnimalShelter
       })
       .AddJwtBearer(jwt =>
       {
-        var key = Encoding.ASCII.GetBytes(Configuration["JwtConfig"]);
+        var key = Encoding.ASCII.GetBytes(Configuration["JwtConfig:Secret"]);
 
         jwt.SaveToken = true;
         jwt.TokenValidationParameters = new TokenValidationParameters

@@ -12,6 +12,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Text;
 
+
 namespace AnimalShelter
 {
   public class Startup
@@ -52,6 +53,9 @@ namespace AnimalShelter
           RequireExpirationTime = false,
         };
       });
+
+      // services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+      //   .EntityFrameworkStores<AnimalShelterContext>();
 
       services.AddControllers();
       services.AddSwaggerGen(c =>
@@ -94,6 +98,8 @@ namespace AnimalShelter
       // app.UseHttpsRedirection();
 
       app.UseRouting();
+
+      app.UseAuthentication();
 
       app.UseAuthorization();
 

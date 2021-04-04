@@ -3,6 +3,7 @@ using AnimalShelter.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -54,8 +55,8 @@ namespace AnimalShelter
         };
       });
 
-      // services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-      //   .EntityFrameworkStores<AnimalShelterContext>();
+      services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+        .AddEntityFrameworkStores<AnimalShelterContext>();
 
       services.AddControllers();
       services.AddSwaggerGen(c =>

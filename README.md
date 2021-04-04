@@ -46,6 +46,10 @@ ___
       "Microsoft": "Information"
     }
   },
+  "JwtConfig":
+  {
+    "Secret": "[your_string_here]"
+  },
   "AllowedHosts": "*",
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost;Port=3306;database=[your_database_name];uid=root;pwd=[your_database_password];"
@@ -53,7 +57,7 @@ ___
 }
 ```
 
-If you are using a server other than the default server, you will need to change the Port number. Otherwise, we will update the code to put in our database information and password. Replace "\[database_name]" with the "animal_shelter_api" and "\[password]" with your password. **Again this is private and should be included in a .gitignore.** The final result should be similar to the following:
+If you are using a server other than the default server, you will need to change the Port number. Otherwise, we will update the code to put in our database information, password, and jwt web-token secret. Replace "\[database_name]" with the "animal_shelter_api" and "\[password]" with your password. Your web-token secret will require a string of 32 characters [here is a random string generator](https://www.browserling.com/tools/random-string). **Again this is private and should be included in a .gitignore.** The final result should be similar to the following:
 
 ```
 {
@@ -63,6 +67,10 @@ If you are using a server other than the default server, you will need to change
       "System": "Information",
       "Microsoft": "Information"
     }
+  },
+  "JwtConfig":
+  {
+    "Secret": "ykdygofazfeebteonijqcqxfdgkamxgu"
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {

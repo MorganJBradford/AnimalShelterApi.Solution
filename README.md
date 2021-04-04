@@ -152,6 +152,7 @@ http://localhost:5000/api/animals?species=dog
 * MSTest
 * MySql
 * .NET v5.0
+* Postman
 * REPL
 * Swashbuckle/Swagger
 

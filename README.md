@@ -48,7 +48,7 @@ ___
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=[your_database_name]=root;pwd=[your_database_password];"
+    "DefaultConnection": "Server=localhost;Port=3306;database=[your_database_name];uid=root;pwd=[your_database_password];"
   }
 }
 ```
@@ -66,7 +66,7 @@ If you are using a server other than the default server, you will need to change
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=animal_shelter_api=root;pwd=password;"
+    "DefaultConnection": "Server=localhost;Port=3306;database=animal_shelter_api;uid=root;pwd=password;"
   }
 }
 ```
@@ -89,6 +89,36 @@ API endpoints can be explored via [Postman](https://www.postman.com/downloads/) 
 
 ### Swagger (Swashbuckle)
 For endpoint exploration in browser with swagger, visit 'http://localhost:5000/swagger' after launching the API.
+
+### Json Web Token **Required**
+To be able to utilize this API, you will need to register as a user to generate a web-token.
+
+#### Registration
+
+* To register, send a POST request to `http://localhost:5000/api/authmanagement/register`
+* Replace your information with the example username, email, and password shown below.
+* Your key will be sent as a response (the redacted section in the example below)
+
+![img](README-files/jwt-register.JPG)
+
+**Tokens expire, if your token no longer works, follow the login instructions for a new token**
+
+#### Login
+
+* To login, send a POST request to `http://localhost:5000/api/authmanagement/login`
+* Replace your information with the example email, and password shown below.
+* Your key will be sent as a response (the redacted section in the example below)
+
+![img](README-files/jwt-login.JPG)
+
+#### Using your Web Token
+
+* Add Authorization to keys under the 'Headers' column
+* Add "Bearer" under the Value column
+* After "Bearer", add a space and then your api key (see example below)
+
+![img](README-files/jwt-use.JPG)
+
 
 ### Endpoints
 Base URL: `https://localhost:5000`
@@ -152,6 +182,7 @@ http://localhost:5000/api/animals?species=dog
 * MSTest
 * MySql
 * .NET v5.0
+* Postman
 * REPL
 * Swashbuckle/Swagger
 
